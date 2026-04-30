@@ -363,6 +363,28 @@ select option {
     transform: translateY(0);
 }
 
+.btn-action-sm {
+    padding: 6px 14px;
+    background: var(--violet-dim);
+    border: 1px solid var(--border-glow);
+    border-radius: 8px;
+    color: var(--violet);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all var(--trans-fast);
+}
+
+.btn-action-sm:hover {
+    background: var(--violet);
+    color: white;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+    transform: translateY(-1px);
+}
+
 .container {
     max-width: 1280px;
     margin: 0 auto;

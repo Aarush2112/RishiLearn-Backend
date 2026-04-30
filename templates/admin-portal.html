@@ -199,28 +199,28 @@
                         <div class="label-row">
                             <label class="field-label">Full Name</label>
                         </div>
-                        <input type="text" class="input-control" placeholder="e.g. Mannat Bansal">
+                        <input type="text" id="student-name" class="input-control" placeholder="e.g. Mannat Bansal">
                     </div>
 
                     <div class="field-group">
                         <div class="label-row">
                             <label class="field-label">Email Address</label>
                         </div>
-                        <input type="email" class="input-control" placeholder="mannat@rishilearn.edu">
+                        <input type="email" id="student-email" class="input-control" placeholder="mannat@rishilearn.edu">
                     </div>
 
                     <div class="field-group">
                         <div class="label-row">
                             <label class="field-label">Student ID</label>
                         </div>
-                        <input type="text" class="input-control" placeholder="RL-2024-001">
+                        <input type="text" id="student-id" class="input-control" placeholder="RL-2024-001">
                     </div>
 
                     <div class="field-group">
                         <div class="label-row">
                             <label class="field-label">Course / Branch</label>
                         </div>
-                        <select class="input-control">
+                        <select id="student-course" class="input-control">
                             <option value="" disabled selected>Select Course</option>
                             <option value="cse">Computer Science Engineering</option>
                             <option value="ece">Electronics Engineering</option>
@@ -233,7 +233,7 @@
                         <div class="label-row">
                             <label class="field-label">Semester</label>
                         </div>
-                        <select class="input-control">
+                        <select id="student-semester" class="input-control">
                             <option value="" disabled selected>Select Semester</option>
                             <option value="1">1st Semester</option>
                             <option value="2">2nd Semester</option>
@@ -247,10 +247,11 @@
                     </div>
 
                     <div class="field-group">
-                        <div class="label-row">
+                        <div class="label-row" style="display: flex; justify-content: space-between; align-items: center;">
                             <label class="field-label">Password</label>
+                            <button type="button" id="generate-password" class="btn-action-sm">Generate</button>
                         </div>
-                        <input type="password" class="input-control" placeholder="••••••••">
+                        <input type="text" id="student-password" class="input-control" placeholder="Click generate or type password">
                     </div>
 
                     <button type="submit" class="btn-submit">

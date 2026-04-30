@@ -100,12 +100,12 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.addEventListener('click', async (e) => {
             e.preventDefault();
 
-            const inputs = document.querySelectorAll('#view-student .input-control');
-            const name       = inputs[0]?.value.trim();
-            const email      = inputs[1]?.value.trim();
-            const student_id = inputs[2]?.value.trim();
-            const course     = inputs[3]?.value.trim();
-            const semester   = inputs[4]?.value.trim();
+            const name       = document.getElementById('student-name')?.value.trim();
+            const email      = document.getElementById('student-email')?.value.trim();
+            const student_id = document.getElementById('student-id')?.value.trim();
+            const course     = document.getElementById('student-course')?.value.trim();
+            const semester   = document.getElementById('student-semester')?.value.trim();
+            const password   = document.getElementById('student-password')?.value.trim();
 
             // Frontend validation
             if (!name || !email || !student_id || !course || !semester) {
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const res = await fetch(`${API_BASE}/api/students`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name, email, student_id, course, semester })
+                    body: JSON.stringify({ name, email, student_id, course, semester, password })
                 });
 
                 const data = await res.json();
@@ -141,6 +141,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.textContent = 'Add Student';
                 submitBtn.disabled = false;
             }
+        });
+    }
+
+    // ── PASSWORD GENERATION ────────────────────────────────────
+    const generateBtn = document.getElementById('generate-password');
+    const passwordInput = document.getElementById('student-password');
+
+    if (generateBtn && passwordInput) {
+        generateBtn.addEventListener('click', () => {
+            const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
+            let retVal = "";
+            for (let i = 0, n = charset.length; i < 8; ++i) {
+                retVal += charset.charAt(Math.floor(Math.random() * n));
+            }
+            passwordInput.value = retVal;
+            showToast('Random password generated', 'info');
         });
     }
 

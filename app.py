@@ -57,6 +57,7 @@ def add_student():
             "student_id": data['student_id'].strip().upper(),
             "course":     data['course'],
             "semester":   data['semester'],
+            "password":   data.get('password', '').strip() or None
         }).execute()
         return jsonify({"success": True, "message": "Student added successfully", "student": response.data[0]}), 201
 
