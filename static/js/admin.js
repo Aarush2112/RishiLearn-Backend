@@ -190,6 +190,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
 
+    // ── LOGOUT REDIRECTION ────────────────────────────────────
+    const logoutBtn = document.querySelector('.btn-logout');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', () => {
+            window.location.href = 'https://capstone-project-1-web-dev.vercel.app';
+        });
+    }
+
     // ── INITIAL LOAD ──────────────────────────────────────────
     loadStudents();
 
